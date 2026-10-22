@@ -1,0 +1,16 @@
+name:Diploy to Github Pages
+on:
+push:
+branches:
+- main
+jobs:
+build:
+run-on:ubuntu-latest
+steps:
+- name: Checkout code
+user: actions/checkout@v2
+- name: Deploy to GitHub Pages
+uses: peaceiris/actions-gh-pages@v3
+with:
+Github_token:${{ secrets.GITHUB_TOKEN }}
+pubish_dir: ./
